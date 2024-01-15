@@ -3,11 +3,6 @@ package PageObjects.BrokerLogin;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.PageObject;
-import net.serenitybdd.core.pages.PageObjects;
-
-import org.junit.Assert;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,11 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static net.serenitybdd.core.Serenity.getDriver;
-
 public class ProductSelection extends PageObject{
 
     String ProductSelectionXpath = "//select[@id='ProductCode']";
+
     String EnterApplicationLeadNumber = "//input[@id='ApplicationNumber']";
     String LoginXpath = "//form[@id='brokerlogin']//input[@value='login']";
     String iframeXpath = "//iframe[@name='1703714075017']";
@@ -35,11 +29,13 @@ public class ProductSelection extends PageObject{
         getDriver().switchTo().frame(frame1);
     }
     @Step("SelectProductFromList")
-    public void SelectProductFromList(String Product) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(15));
+    public void SelectProductFromList(String Product) throws InterruptedException {
+        Thread.sleep(2000);
 
-        WebElement dropdownElement = $(By.xpath(ProductSelectionXpath));
-        Select selectObject = new Select(dropdownElement);
+        WebElement productSelect1 = $(By.xpath(ProductSelectionXpath));
+        Select selectObject = new Select(productSelect1);
+        selectObject.selectByValue(Product);
+        //selectFromDropdown(productSelect1, Product);
 
     }
     @Step("EnterLeadNumber")

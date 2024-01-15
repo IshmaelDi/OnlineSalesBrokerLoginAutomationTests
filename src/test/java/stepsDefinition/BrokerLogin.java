@@ -2,6 +2,7 @@ package stepsDefinition;
 
 import PageObjects.BrokerLogin.Broker;
 import PageObjects.BrokerLogin.BrokerCodeAccess;
+import PageObjects.BrokerLogin.MainMember;
 import PageObjects.BrokerLogin.ProductSelection;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
@@ -17,6 +18,8 @@ public class BrokerLogin extends PageObject {
     BrokerCodeAccess brokerCodeAccess;
     @Steps
     ProductSelection productSelection;
+    @Steps
+    MainMember mainMember;
 
 
     @Given("Broker logs in with valid Credentials.")
@@ -37,16 +40,19 @@ public class BrokerLogin extends PageObject {
     @When("Switch to Product Selection {string} and enter {string} and click loginButton.'")
     public void switch_to_product_selection_and_enter_and_click_login_button(String Product, String LeadNumber) throws InterruptedException {
 
+
         productSelection.FrameToSwitch();
         productSelection.SelectProductFromList(Product);
         productSelection.EnterLeadNumber(LeadNumber);
         productSelection.ClickLoginButton();
+        Thread.sleep(5000);
     }
 
     @When("Navigate to Member details to complete required details {string}, {string}, {string}, {string}, {string}.")
-    public void navigate_to_member_details_to_complete_required_details(String string, String string2, String string3, String string4, String string5) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void navigate_to_member_details_to_complete_required_details(String Title, String Name, String Surname, String string4, String string5) throws InterruptedException {
+        mainMember.BrokerTitle(Title);
+        mainMember.BrokerName(Name);
+        mainMember.BrokerSurname(Surname);
     }
 
     @When("Enter {string}, {string}, {string},{string}, {string}.")
