@@ -15,7 +15,7 @@ public class MainMember extends PageObject {
 
 
     //MainMember Web Elements Implementations
-    String BrokerTitleXpath = "//select[@id='onTtl']";
+    String BrokerTitleXpath = "(//select[@id='onTtl'])[1]";
     String BrokerNameXpath = "/(//input[@id='onName'])[1]";
     String BrokerSurnameXpath = "(//input[@id='onSurname'])[1]";
     String BrokerIdNumberXpath = "//input[@id='onID']";
