@@ -1,9 +1,6 @@
 package stepsDefinition;
 
-import PageObjects.BrokerLogin.Broker;
-import PageObjects.BrokerLogin.BrokerCodeAccess;
-import PageObjects.BrokerLogin.MainMember;
-import PageObjects.BrokerLogin.ProductSelection;
+import PageObjects.BrokerLogin.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import io.cucumber.java.en.Then;
@@ -20,6 +17,8 @@ public class BrokerLogin extends PageObject {
     ProductSelection productSelection;
     @Steps
     MainMember mainMember;
+    @Steps
+    AdditionalMember additionalMember;
 
 
     @Given("Broker logs in with valid Credentials.")
@@ -74,9 +73,12 @@ public class BrokerLogin extends PageObject {
     }
 
     @When("User adds additional Member {string},{string},{string},{string},{string}, {string}.")
-    public void user_adds_additional_member(String string, String string2, String string3, String string4, String string5, String string6) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void user_adds_additional_member(String ExtendedMemberTitle, String ExtendedMemeberNames, String ExtendedMemberSurname, String string4, String string5, String string6) throws InterruptedException {
+        additionalMember.ExtendedMemberPage();
+        additionalMember.ExtendedMemberTitle(ExtendedMemberTitle);
+        additionalMember.ExtendedMemberName(ExtendedMemeberNames);
+        additionalMember.ExtendedMemberSurname(ExtendedMemberSurname);
+
     }
 
     @When("User adds beneficiary {string}, {string}, {string},{string}, {string}")
