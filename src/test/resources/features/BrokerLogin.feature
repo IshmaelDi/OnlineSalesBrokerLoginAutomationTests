@@ -13,5 +13,5 @@ Feature: Broker Logs In.
     Then user should get a generated policy number with correct cover '<coverAmount>'.
 
     Examples:
-      | BrokerCode | Password     | Product | LeadNumber | Title | Name   | Surname | IDnumber      | mobileNumber | PostalAddress | PostalCode | MonthlyIncome     | Occupation          | education                            | FicaDeclaration1 | FicaDeclaration2 |
-      | i2124      | Password2023 | XS      | Ba5643646  | Mr    | Lwandle | Duma    | 8001019310085 | 0832002639   | 12345 Test    | 1205       | R15,000 - R18,000 | Skilled agriculture | Post-graduate (Honours, Masters etc) | Yes              | Yes              |
+      | BrokerCode | Password     | Product | LeadNumber | Title | Name    | Surname | IDnumber      | mobileNumber | PostalAddress | PostalCode | MonthlyIncome     | Occupation | education                            | FicaDeclaration1 | FicaDeclaration2 |
+      | i2124      | Password2023 | XS      | Ba5643646  | Mr    | Lwandle | Duma    | 8001019310085 | 0832002639   | 12345 Test    | 1205       | 18,000 - 25,000 | Technician | Post-graduate (Honours, Masters etc) | yes              | yes              |
