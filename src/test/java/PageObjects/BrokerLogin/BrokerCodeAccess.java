@@ -26,8 +26,14 @@ public class BrokerCodeAccess extends PageObject {
     // Click Login Button
 
     String BrokerCodeXpath = "(//input[@id='AdministratorBrokerCode'])[1]";
+    String BrokerInputUserNameXpath = "//form[@id='brokerloginmain']//input[@id='AdministratorBrokerCode']";
+
     String BrokerPasswordXpath = "(//input[@id='AdministratorBrokerPassword'])[1]";
+    String BrokerInputPasswordXpath = "(//input[@id='AdministratorBrokerPassword'])[1]";
+
+
     String LoginXpath = "//form[@id='brokerloginmain']//input[@value='login']";
+    String LoginButtonXpath = "(//input[@value='login'])[1]";
 
 
 
@@ -41,6 +47,7 @@ public class BrokerCodeAccess extends PageObject {
 
 
     // Switch to iframe using tagName
+
     public void switchToFrame (){
         WebElement frame = $(By.tagName("iframe"));
         getDriver().switchTo().frame(frame);
@@ -49,19 +56,19 @@ public class BrokerCodeAccess extends PageObject {
 
     public void EnterBrokerCode(String BrokerCode) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(60));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerCodeXpath))).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerCodeXpath))).sendKeys(BrokerCode);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerInputUserNameXpath))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerInputUserNameXpath))).sendKeys(BrokerCode);
     }
     @Step("EnterBrokerPassword")
     public void EnterBrokerPassword(String Password) {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(60));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerPasswordXpath))).click();
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerPasswordXpath))).sendKeys(Password);
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerInputPasswordXpath))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(BrokerInputPasswordXpath))).sendKeys(Password);
     }
     @Step("ClickLoginButton")
     public void ClickLoginButton(){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LoginXpath))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(LoginButtonXpath))).click();
 
         getDriver().switchTo().defaultContent();
 

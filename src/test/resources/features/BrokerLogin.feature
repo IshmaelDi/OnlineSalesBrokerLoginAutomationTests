@@ -12,9 +12,6 @@ Feature: Broker Logs In.
     And user enters payer details '<bankName>','<accountType>','<accountNumber>','<debitDate>','<Debicheck>'
     Then user should get a generated policy number with correct cover '<coverAmount>'.
 
-
-
-
     Examples:
       | BrokerCode | Password     | Product                      | LeadNumber | Title | Names   | Surname | IDnumber      | mobileNumber | PostalAddress | PostalCode | MonthlyIncome     | Occupation          | education                            | FicaDeclaration1 | FicaDeclaration2 |
       | i2124      | Password2023 | Clientele Classic Legal Plan | Ba5643646  | Mr    | Lwandle | Duma    | 8001019310085 | 0832002639   | 12345 Test    | 1205       | R15,000 - R18,000 | Skilled agriculture | Post-graduate (Honours, Masters etc) | Yes              | Yes              |
