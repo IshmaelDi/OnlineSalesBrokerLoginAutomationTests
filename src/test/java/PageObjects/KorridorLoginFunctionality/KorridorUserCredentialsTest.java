@@ -10,11 +10,16 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-class KorridorUserCredentialsTest extends PageObject {
+public class KorridorUserCredentialsTest extends PageObject {
 
     // Korridor Front End Url
 
     String Url = "https://apptest.korridor.com/login";
+
+    public void OpenKorridorWebsite(){
+        getDriver().get(Url);
+        getDriver().getWindowHandle();
+    }
 
     // Korridor Login Page Elements
 
