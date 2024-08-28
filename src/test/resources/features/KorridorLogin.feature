@@ -7,4 +7,4 @@ Feature: Korridor Log In Page.
 
     Examples:
       | UserName | Password     |
-      | i2124    | Password2023 |
+      | Ncane    | qpPcAK7x |
