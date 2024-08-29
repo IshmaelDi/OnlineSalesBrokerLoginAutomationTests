@@ -2,9 +2,10 @@ package PageObjects.KorridorLoginFunctionality;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
+import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -62,16 +63,39 @@ public class KorridorUserCredentialsTest extends PageObject {
     // Switch Company Profile Pop Up.
 
     @Step("There will be a pop window for company profile selection")
-    public void CompanyProfile(){
-        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    public void CompanyProfileNotice(){
+        boolean isNoticeInfoDisplayed = $(By.xpath(SwitchCompanyProfileXpath)).isDisplayed();
+
+        if (isNoticeInfoDisplayed){
+
+            System.out.println(("Notice information is displayed : " + $(By.xpath(SwitchCompanyProfileXpath)).getText()));
+        }else
+        {
+
+            Assert.fail("Notice Information not Displayed");
+        }
+//        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+//        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SwitchCompanyProfileXpath)));
     }
 
-    @Step("Click to select Company Name from drop down list")
+    @Step("Click on Select Company Text and select Company Name")
     public void CompanyName(){
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SignInButton))).click();
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SwitchCompanyProfileXpath))).click();
+        WebElement dropdown = $(By.xpath(CompanySelectionXpath));
+        Select selectObject = new Select(dropdown);
+        selectObject.selectByValue("TEST COMPANY (PTY) LTD");
 
     }
+
+    @Step("Click on Confirm Button")
+    public void ConfirmButton(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        WebElement ConfirmButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(ConfirmButtonXpath)));
+        ConfirmButton.click();
+    }
+
+
 
 
 
