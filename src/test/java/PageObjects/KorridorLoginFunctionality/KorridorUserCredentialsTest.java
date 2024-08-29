@@ -26,6 +26,15 @@ public class KorridorUserCredentialsTest extends PageObject {
     String PasswordXpath = "//input[@id='password']";
     String SignInButton = "//button[@id='login-btn']";
 
+    //Switch Company Profile Po up
+
+    String SwitchCompanyProfileXpath = "(//div[@class='modal-content'])[2]";
+    String CompanySelectionXpath = "(//select[@class='bootbox-input bootbox-input-select form-control'])[1]";
+    String ConfirmButtonXpath = "//button[normalize-space()='Confirm']";
+    String NoticeXpath = "//div[@class='modal-body']";
+    String OkButtonXpath = "//button[normalize-space()='OK']";
+
+
 
     // Korridor Login Page Methods
 
@@ -49,6 +58,24 @@ public class KorridorUserCredentialsTest extends PageObject {
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SignInButton))).click();
 
     }
+
+    // Switch Company Profile Pop Up.
+
+    @Step("There will be a pop window for company profile selection")
+    public void CompanyProfile(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+    }
+
+    @Step("Click to select Company Name from drop down list")
+    public void CompanyName(){
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(SignInButton))).click();
+
+    }
+
+
+
+
 
 
 
