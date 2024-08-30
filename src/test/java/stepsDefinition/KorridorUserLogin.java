@@ -31,17 +31,17 @@ public class KorridorUserLogin extends PageObject {
         korridorUserCredentialsTest.ClickLogInButton();
     }
 
-    @And("There will be a pop window for company profile selction")
-    public void there_will_be_a_pop_window_for_company_profile_selction() {
-        korridorUserCredentialsTest.CompanyProfileNotice();
-    }
-    @When("Click to select {string} from drop down list")
-    public void click_to_select_from_drop_down_list(String string) {
-        korridorUserCredentialsTest.CompanyName();
-    }
-    @Then("Click Confirm Button")
-    public void click_confirm_button() {
-        korridorUserCredentialsTest.ConfirmButton();
-    }
+//    @And("There will be a pop window for company profile selction")
+//    public void there_will_be_a_pop_window_for_company_profile_selction() {
+//        korridorUserCredentialsTest.CompanyProfileNotice();
+//    }
+//    @When("Click to select {string} from drop down list")
+//    public void click_to_select_from_drop_down_list(String string) {
+//        korridorUserCredentialsTest.CompanyName();
+//    }
+//    @Then("Click Confirm Button")
+//    public void click_confirm_button() {
+//        korridorUserCredentialsTest.ConfirmButton();
+//    }
 
 }

@@ -19,6 +19,8 @@ public class KorridorUserCredentialsTest extends PageObject {
     public void OpenKorridorWebsite(){
         getDriver().get(Url);
         getDriver().getWindowHandle();
+        getDriver().manage().window().maximize();
+        //getDriver().manage().window().maximize();
     }
 
     // Korridor Login Page Elements
