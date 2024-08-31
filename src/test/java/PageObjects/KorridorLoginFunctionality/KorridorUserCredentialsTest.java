@@ -1,9 +1,12 @@
 package PageObjects.KorridorLoginFunctionality;
 
+import io.cucumber.java.en.*;
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,14 +16,20 @@ import java.time.Duration;
 
 public class KorridorUserCredentialsTest extends PageObject {
 
+
+
     // Korridor Front End Url
+
+    // https://apptest.korridor.com/
 
     String Url = "https://apptest.korridor.com/login";
     public void OpenKorridorWebsite(){
+
         getDriver().get(Url);
         getDriver().getWindowHandle();
         getDriver().manage().window().maximize();
         //getDriver().manage().window().maximize();
+
     }
 
     // Korridor Login Page Elements
@@ -29,9 +38,15 @@ public class KorridorUserCredentialsTest extends PageObject {
     String PasswordXpath = "//input[@id='password']";
     String SignInButton = "//button[@id='login-btn']";
 
-    //Switch Company Profile Po up
+    // Switch Company Profile Pop Up.
+
+    // Handle this as Alert
+    // Add Dependency : Import org.openqa.selenium.Alert
+
+
 
     String SwitchCompanyProfileXpath = "(//div[@class='modal-content'])[2]";
+    String SwitchXpath = "/html/body/div[9]/div";
     String CompanySelectionXpath = "(//select[@class='bootbox-input bootbox-input-select form-control'])[1]";
     String ConfirmButtonXpath = "//button[normalize-space()='Confirm']";
     String NoticeXpath = "//div[@class='modal-body']";
@@ -68,9 +83,13 @@ public class KorridorUserCredentialsTest extends PageObject {
     public void CompanyProfileNotice(){
         boolean isNoticeInfoDisplayed = $(By.xpath(SwitchCompanyProfileXpath)).isDisplayed();
 
+        //Implement Alert
+
+
+
         if (isNoticeInfoDisplayed){
 
-            System.out.println(("Notice information is displayed : " + $(By.xpath(SwitchCompanyProfileXpath)).getText()));
+            System.out.println(("Notice information is displayed : IMPORTANT NOTICE - Diesel Africa Lusaka will be closed on the following dates IMPORTANT NOTICE - Diesel Africa Lusaka will be closed on the following dates, 24 June 2019 to 28 June 2019 and between 6 July 2019 to 9 July 2019 for fuel collections, due to a road upgrade." + $(By.xpath(SwitchCompanyProfileXpath)).getText()));
         }else
         {
 

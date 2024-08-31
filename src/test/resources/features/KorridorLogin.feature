@@ -1,12 +1,13 @@
-Feature: Korridor Platform Log In Page.
+Feature: As a User I want to Validate Korridor Platform Login Functionality
 
-  Scenario Outline: Korridor User Credentials
-    Given User logs in with valid Credentials
-    When User Captures '<UserName>' and '<Password>'
-    And User Click LogIn Button
-#    And There will be a pop window for company profile selction
-#    And Click to select '<Company Name>' from drop down list
-#    Then Click Confirm Button
+  Scenario Outline: Validate logIn functionality with valid credentials
+    Given Driver has launched Korridor Platform
+    When Driver Captures '<UserName>' and '<Password>'
+    And Driver click LogIn
+    And Driver switch to select company profile '<CompanyName>'
+    And Driver click confirm button
+    And Driver Read IMPORTANT NOTICE
+    Then Driver click Ok button
 
     Examples:
       | UserName | Password |Company Name|
