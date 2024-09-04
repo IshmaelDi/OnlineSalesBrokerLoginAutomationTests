@@ -3,11 +3,11 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>net.serenitybdd.starter</groupId>
-    <artifactId>cucumber-starter</artifactId>
+    <artifactId>Cucumber-starter</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>jar</packaging>
 
-    <name>Korridor Platform project using Cucumber</name>
+    <name>Korridor Platform Project using Cucumber Framework</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -92,12 +92,12 @@
             <scope>test</scope>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>net.serenity-bdd</groupId>-->
-<!--            <artifactId>serenity-model</artifactId>-->
-<!--            <version>3.9.7</version>-->
-<!--            <scope>test</scope>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-model</artifactId>
+            <version>3.9.7</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>net.serenity-bdd</groupId>
             <artifactId>serenity-model</artifactId>

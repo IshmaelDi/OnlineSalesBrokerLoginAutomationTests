@@ -1,8 +1,7 @@
 package stepsDefinition;
 
-import io.cucumber.java.en.And;
+import PageObjects.KorridorLoginFunctionality.KorridorUserCredentialsTest;
 import io.cucumber.java.en.Given;
-import PageObjects.KorridorLoginFunctionality.*;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.annotations.Steps;
@@ -20,10 +19,10 @@ public class KorridorUIStepDef extends PageObject {
     public void driver_has_launched_korridor_platform() {
        korridorUserCredentialsTest.OpenKorridorWebsite();
     }
-    @When("Driver Captures {string} and {string}")
-    public void driver_captures_and(String string, String string2) {
-        korridorUserCredentialsTest.EnterUserName(string);
-        korridorUserCredentialsTest.EnterPassword(string);
+    @When("Driver Captures UserName and Password")
+    public void driver_captures_user_name_and_password() {
+       korridorUserCredentialsTest.EnterUserName("Ncane ");
+       korridorUserCredentialsTest.EnterPassword("qpPcAK7x");
     }
     @Then("Driver click LogIn")
     public void driver_click_log_in() {
@@ -33,24 +32,26 @@ public class KorridorUIStepDef extends PageObject {
     // Switch to Alert or Pop Up Window
 
     @When("Driver switch to select company profile {string}")
-    public void driver_switch_to_select_company_profile(String string) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void driver_switch_to_select_company_profile(String string)  {
+        korridorUserCredentialsTest.CompanyName("TEST COMPANY (PTY) LTD");
+
     }
+
+
+
+
+
     @When("Driver click confirm button")
     public void driver_click_confirm_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        korridorUserCredentialsTest.ConfirmButton();
     }
     @When("Driver Read IMPORTANT NOTICE")
     public void driver_read_important_notice() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        korridorUserCredentialsTest.getDriver();
     }
     @Then("Driver click Ok button")
     public void driver_click_ok_button() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        korridorUserCredentialsTest.OKButoon();
     }
 
 

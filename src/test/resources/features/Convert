@@ -1,0 +1,7 @@
+Future<void>main() async {
+WidgetFlutterBinding.ensureInitialized();
+// Add line of code here
+await configureDependencies();
+await initialDependecies();
+RunAppO(const App());
+}

@@ -2,7 +2,7 @@ Feature: As a User I want to Validate Korridor Platform Login Functionality
 
   Scenario Outline: Validate logIn functionality with valid credentials
     Given Driver has launched Korridor Platform
-    When Driver Captures '<UserName>' and '<Password>'
+    When Driver Captures UserName and Password
     And Driver click LogIn
     And Driver switch to select company profile '<CompanyName>'
     And Driver click confirm button
@@ -10,5 +10,5 @@ Feature: As a User I want to Validate Korridor Platform Login Functionality
     Then Driver click Ok button
 
     Examples:
-      | UserName | Password |Company Name|
-      | Ncane    | qpPcAK7x |TEST COMPANY (PTY) LTD|
+      |CompanyName|
+      |TEST COMPANY (PTY) LTD|
