@@ -5,9 +5,15 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(plugin = {"pretty"},
+@CucumberOptions(
         features = "src/test/resources/features/KorridorLogin.feature",
-        glue = "stepsDefinition")
+        glue = "stepsDefinition",
+        plugin = { "pretty", "json:target/CucumberTestReport.json" },
+        monochrome = false,
+        dryRun = false
+
+
+)
 
 
 

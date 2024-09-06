@@ -1,9 +1,10 @@
 package stepsDefinition;
 
-import PageObjects.KorridorLoginFunctionality.KorridorUserCredentialsTest;
+import PageObjects.KorridorLoginFunctionality.*;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import net.serenitybdd.annotations.Step;
 import net.serenitybdd.annotations.Steps;
 import net.serenitybdd.core.pages.PageObject;
 
@@ -11,6 +12,8 @@ public class KorridorUIStepDef extends PageObject {
 
     @Steps
     KorridorUserCredentialsTest korridorUserCredentialsTest;
+    @Steps
+    DashBoad dashBoad;
 
 
     // Driver Steps Definitions
@@ -37,10 +40,6 @@ public class KorridorUIStepDef extends PageObject {
 
     }
 
-
-
-
-
     @When("Driver click confirm button")
     public void driver_click_confirm_button() {
         korridorUserCredentialsTest.ConfirmButton();
@@ -52,6 +51,20 @@ public class KorridorUIStepDef extends PageObject {
     @Then("Driver click Ok button")
     public void driver_click_ok_button() {
         korridorUserCredentialsTest.OKButoon();
+    }
+    @When("Driver click New Once off Order Button")
+    public void driver_click_new_once_off_order_button() {
+        dashBoad.NewOnceOffOrderButton();
+
+    }
+    @When("Select {string}, {string}<Trailer Reg>{string}<Country>'from Drop List")
+    public void select_trailer_reg_country_from_drop_list(String string3, String string4, String string5) {
+        dashBoad.SelectDriver(string3);
+        dashBoad.SelectTruck(string4);
+    }
+    @Then("Click Continue Butoon")
+    public void click_continue_butoon() {
+        dashBoad.ClickCOntinueButton();
     }
 
 
