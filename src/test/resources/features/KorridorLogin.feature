@@ -18,4 +18,4 @@ Feature: As a User I want to Validate Korridor Platform Login Functionality
 
     Examples:
       |CompanyName           |Driver     |Truck                      |
-      |TEST COMPANY (PTY) LTD|mugabe, bob|ABB76543 (Volvo 2010 FB667)|
+      |TEST COMPANY (PTY) LTD|1321321 (Generic Generic )|ABB76543 (Volvo 2010 FB667)|
