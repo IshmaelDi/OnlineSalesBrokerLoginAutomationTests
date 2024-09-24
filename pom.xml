@@ -6,7 +6,7 @@
 
 
     <groupId>net.serenitybdd.starter</groupId>
-    <artifactId>Cucumber-starter</artifactId>
+    <artifactId>TMSTestAutomation</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 <!--    <packaging>jar</packaging>-->
 

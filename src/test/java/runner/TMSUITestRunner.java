@@ -8,7 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features/TMSLogin.feature",
         glue = "stepsDefinition",
-        plugin = { "pretty", }
+        monochrome = false,
+
+        plugin = { "pretty", "html:target/cucumber-reports" }
 
 
 
