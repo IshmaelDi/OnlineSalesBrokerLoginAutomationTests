@@ -1,21 +1,12 @@
-package PageObjects.TMSLoginFunctionality.Orders;
+package PlatformChangeRequestTests.TMSorderCreate;
 
 import net.serenitybdd.annotations.Step;
 import net.serenitybdd.core.pages.PageObject;
-import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.awt.*;
-import java.time.Duration;
 
 public class TMSOrders extends PageObject{
 
-    // Add Orders Elements
+    // Add TMSorderCreate Elements
 
     String OrdersXpath = "/html/body/div[2]/aside/section/ul/li[3]/a/span";
     String CreateOrderXpath = "//a[normalize-space()=\"Create Order\"]";
@@ -35,7 +26,7 @@ public class TMSOrders extends PageObject{
 
     // Add Methods
 
-    @Step("Click Orders")
+    @Step("Click TMSorderCreate")
     public void ClickOrders(){
         $(By.xpath(OrdersXpath)).click();
     }

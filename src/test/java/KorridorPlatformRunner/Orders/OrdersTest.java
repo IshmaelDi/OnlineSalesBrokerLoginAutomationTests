@@ -1,4 +1,5 @@
-package runner;
+package KorridorPlatformRunner.Orders;
+
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -7,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = "src/test/resources/features/TMSLogin.feature",
-        glue = "stepsDefinition",
+        glue = "KorridorPlatformStepsDefinition",
         monochrome = false,
 
         plugin = { "pretty", "html:target/cucumber-reports" }
@@ -16,7 +17,5 @@ import org.junit.runner.RunWith;
 
 )
 
-
-
-public class TMSUITestRunner {
+public class OrdersTest {
 }

@@ -1,7 +1,7 @@
 # Korridor Platform Automation
 This file is going to take us step by step on how to set up the project and execution
 
-## Tools needed in this project
+## Tools needed
 * JDK
 * IntelliJ
 * selenium
