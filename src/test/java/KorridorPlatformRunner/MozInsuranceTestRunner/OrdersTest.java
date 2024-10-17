@@ -1,4 +1,5 @@
-package KorridorPlatformRunner;
+package KorridorPlatformRunner.MozInsuranceTestRunner;
+
 
 import io.cucumber.junit.CucumberOptions;
 import net.serenitybdd.cucumber.CucumberWithSerenity;
@@ -16,7 +17,5 @@ import org.junit.runner.RunWith;
 
 )
 
-
-
-public class TMSUITestRunner {
+public class OrdersTest {
 }

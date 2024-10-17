@@ -4,7 +4,7 @@ import net.serenitybdd.core.pages.PageObject;
 
 import java.time.Duration;
 
-import static org.junit.Assert;
+
 
 public class MozOrders extends PageObject {
 

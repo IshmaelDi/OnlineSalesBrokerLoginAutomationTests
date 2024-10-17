@@ -1,4 +1,4 @@
-package KorridorPlatformObjects;
+package KorridorPlatformObjects.PlatformPage;
 
 
 
